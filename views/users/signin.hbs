@@ -1,0 +1,26 @@
+<div>Prijava korisnika</div>
+<form method="post" action="/users/signin">
+    <label for="email">E-mail adresa</label>
+    <input type="email" name="email" maxlength="100" required="true" />
+    <br />
+    <label for="password">Zaporka:</label>
+    <input type="password" name="password" required="true" />
+    <br />
+    <input type="submit" value="Potvrdi" />
+</form>
+
+{{#if error_validation}}
+<p>Dogodila se greška u provjeri podataka!</p>
+{{/if}}
+
+{{#if error_database}}
+<p>Dogodila se greška u radu baze podataka!</p>
+{{/if}}
+
+{{#if unknown_user}}
+<p>Korisnik ne postoji!</p>
+{{/if}}
+
+{{#if invalid_password}}
+<p>Zaporka nije točna!</p>
+{{/if}}

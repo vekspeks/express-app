@@ -1,0 +1,30 @@
+<div>Registracija korisnika</div>
+<form method="post" action="/users/signup">
+
+<label for="name">Ime:</label>
+<input type="text" name="name" minlength="3" maxlength="100" />
+<br />
+<label for="email">E-mail:</label>
+<input type="email" name="email" maxlength="100" required="" />
+<br />
+<label for="password">Zaporka:</label>
+<input type="password" name="password" minlength="6" required="" />
+<br />
+<label for="passwordConfirmation">Potvrda zaporke:</label>
+<input type="password" name="passwordConfirmation" minlength="6" required="" />
+<br />
+<input type="submit" value="Potvrdi" />
+<input type="reset" value="Poništi" />
+</form>
+
+{{#if error_validation}}
+<p>Dogodila se greška u provjeri podataka!</p>
+{{/if}}
+
+{{#if error_database}}
+<p>Dogodila se greška prilikom spremanja u bazu podataka!</p>
+{{/if}}
+
+{{#if success}}
+<p>Korisnik je uspješno registriran!</p>
+{{/if}}
