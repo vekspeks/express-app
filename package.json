@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nodemon -r dotenv/config ./bin/www",
     "start": "node -r dotenv/config ./bin/www",
-    "tw": "npx tailwindcss -i ./public/stylesheets/input.css -o ./public/stylesheets/output.css"
+    "tw": "npx tailwindcss -i ./public/stylesheets/input.css -o ./public/stylesheets/output.css --watch"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",

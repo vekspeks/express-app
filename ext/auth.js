@@ -7,7 +7,6 @@ const authMiddleware = (req, res, next) =>{
     } else {
         req.userEmail = null;
     }
-    console.log();
     next();
 };
 

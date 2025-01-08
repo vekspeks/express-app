@@ -2,9 +2,26 @@
 <html>
   <head>
     <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/output.css' />
   </head>
-  <body>
-    {{{body}}}
+  <body class="min-h-screen flex flex-col">
+
+    <header class="bg-blue-600 text-white p-4">
+      <div class="container mx-auto">
+        <h1 class="text-xl font-bold">Moja express aplikacija</h1>
+      </div>
+    </header>
+    
+    <main class="flex-grow bg-gray-100 p-6">
+      <div class="container mx-auto">
+        {{{body}}}
+      </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white p-4">
+      <div class="container mx-auto text-center">
+        <p>&copy; 2025 Veki T&P. Sva prava podržana.</p>
+      </div>
+    </footer>
   </body>
 </html>
