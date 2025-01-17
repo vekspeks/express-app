@@ -7,8 +7,18 @@
   <body class="min-h-screen flex flex-col">
 
     <header class="bg-blue-600 text-white p-4">
-      <div class="container mx-auto">
+      <div class="container mx-auto flex flex-wrap items-center">
         <h1 class="text-xl font-bold">Moja express aplikacija</h1>
+
+        <div class="flex-1 text-right min-w-52 text-sm">
+          {{#unless userEmail}}
+          <a class="py-1 px-2 bg-white text-blue-600 rounded hover:bg-slate-200" href="/users/signin">Prijava</a>
+          <a class="py-1 px-2 bg-white text-blue-600 rounded hover:bg-slate-200" href="/users/signup">Registracija</a>
+          {{/unless}}
+          {{#if userEmail}}
+          <a class="py-1 px-2 bg-white text-blue-600 rounded hover:bg-slate-200" href="/users/signout">Odjava</a>
+          {{/if}}
+        </div>
       </div>
     </header>
     
