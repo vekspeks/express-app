@@ -1,15 +1,23 @@
 var express = require('express');
 var router = express.Router();
+var db = require("../services/db");
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', async function(req, res, next) {
 
-  let user = false;
-  if (req.userEmail){
-    user = req.userEmail
+  let conn;
+  try {
+    conn = await db.getConnection();
+    const query = "SELECT * FROM rooms ORDER BY name;";
+    const stmt = await conn.prepare(query);
+    const result = await stmt.execute();
+    res.render('index', {items: result});
+  } catch (error) {
+    
+  } finally{
+    conn.release();
   }
-
-  res.render('index', {title: 'Moja prva Express aplikacija.', name : user});
+  
 });
 
 module.exports = router;
